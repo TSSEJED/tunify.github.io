@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunify LPM Club</title>
+    <style>
+        /* Body Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0b0b0b, #2b2b2b);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .cta-button {
+            background: #ff4757;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #ff6b6b;
+        }
+
+        /* Video Grid Layout */
+        .video-grid {
+            max-width: 1300px;
+            margin: 3rem auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Video Card */
+        .video-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+        }
+
+        .video-iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 15px 15px;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        /* Add Content Section */
+        .add-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+        }
+
+        .add-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff4757;
+            margin-bottom: 1rem;
+        }
+
+        .add-content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.2rem;
+            }
+        }
+
+        /* Global Styling for Links */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">Tunify Music Club</a>
+            <a href="register.html" class="cta-button">Share Your Taste</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="video-grid">
+            <!-- Manually Add Tunisian Music Video IDs -->
+            <div class="video-card">
+                <iframe class="video-iframe" 
+                        src="https://www.youtube.com/embed/PLFxECIB5e-OvoXTKUpQIWjfqOQobQuIgJ" 
+                        allowfullscreen>
+                </iframe>
+                <div class="video-info">
+                    <h3 class="video-title">TEST</h3>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <iframe class="video-iframe" 
+                        src="https://www.youtube.com/embed/VIDEO_ID_2" 
+                        allowfullscreen>
+                </iframe>
+                <div class="video-info">
+                    <h3 class="video-title">Artist Name - Song Title</h3>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+</body>
+</html>
