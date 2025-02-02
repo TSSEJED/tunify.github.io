@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tunify LPM Club</title>
+    <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
     <style>
         /* Global Reset */
         * {
@@ -12,92 +13,101 @@
             box-sizing: border-box;
         }
 
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 0.5em;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
         /* Body */
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #141e30;
-            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            text-align: center;
+            position: relative;
             overflow: hidden;
-            background-image: url('https://www.example.com/hero-image.jpg'); /* Replace with your own image */
+            padding: 0 20px;
+            background-image: linear-gradient(135deg, #801818, #1a0d0e);
             background-size: cover;
             background-position: center;
-            position: relative;
-        }
-
-        /* Overlay for text clarity */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
         }
 
         /* Main Container */
-        .coming-soon-container {
+        .main-container {
             position: relative;
+            max-width: 800px;
+            width: 100%;
+            padding: 3.5rem 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 700px;
-            padding: 4rem 2rem;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             z-index: 1;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease-out forwards;
+            animation: fadeIn 1s ease-out forwards;
         }
 
         /* Logo */
         .logo {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 800;
+            color: #ff4757;
             background: linear-gradient(45deg, #ff6b6b, #ff4757);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: 2px;
-            animation: fadeIn 1s ease-out 0.2s forwards;
+            margin-bottom: 1.5rem;
         }
 
         /* Heading */
         .heading {
             font-size: 2.5rem;
+            color: #333;
             font-weight: 600;
-            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
             letter-spacing: 1px;
-            color: #ff4757;
             opacity: 0;
-            animation: fadeIn 1s ease-out 0.4s forwards;
+            animation: fadeIn 1s ease-out 0.3s forwards;
         }
 
         /* Description */
         .description {
-            font-size: 1.3rem;
-            color: #ddd;
+            font-size: 1.2rem;
+            color: #555;
             line-height: 1.6;
-            margin-top: 1.5rem;
+            margin-bottom: 2rem;
             opacity: 0;
-            animation: fadeIn 1s ease-out 0.6s forwards;
+            animation: fadeIn 1s ease-out 0.5s forwards;
         }
 
         /* Call to Action Button */
         .cta-button {
-            background: #ff4757;
+            display: inline-block;
+            background: #292425;
             color: white;
             padding: 1rem 2.5rem;
-            border-radius: 50px;
             font-size: 1.3rem;
-            font-weight: 700;
+            font-weight: 600;
+            border-radius: 40px;
             text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
-            margin-top: 2rem;
-            display: inline-block;
             opacity: 0;
-            animation: fadeIn 1s ease-out 0.8s forwards;
+            animation: fadeIn 1s ease-out 0.7s forwards;
         }
 
         .cta-button:hover {
@@ -109,13 +119,26 @@
             transform: scale(1);
         }
 
+        /* QR Code */
+        .qr-code {
+            margin-top: 3rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
+        }
+
+        .qr-code img {
+            max-width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        }
+
         /* Footer */
         .footer {
             font-size: 0.9rem;
-            color: #bbb;
+            color: #aaa;
             margin-top: 2rem;
             opacity: 0;
-            animation: fadeIn 1s ease-out 1s forwards;
+            animation: fadeIn 1s ease-out 1.3s forwards;
         }
 
         /* Keyframe Animations */
@@ -128,25 +151,14 @@
             }
         }
 
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
-            .coming-soon-container {
+            .main-container {
                 padding: 3rem 1.5rem;
             }
 
             .logo {
-                font-size: 3rem;
+                font-size: 3.2rem;
             }
 
             .heading {
@@ -154,22 +166,31 @@
             }
 
             .cta-button {
-                padding: 0.8rem 2rem;
+                padding: 0.8rem 2.3rem;
+                font-size: 1.1rem;
+            }
+
+            .qr-code img {
+                max-width: 180px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="overlay"></div>
-    <div class="coming-soon-container">
+    <div class="main-container">
         <h1 class="logo">Tunify</h1>
-        <h2 class="heading">Something Exciting Is Coming!</h2>
+        <h2 class="heading">Something Amazing Is Coming Soon!</h2>
         <p class="description">
-            We're preparing a special platform for you to discover the best of music.
-            Stay tuned for the launch!
+            We're building a special platform just for you to discover the best of music. Get ready for an exciting launch!
         </p>
         <a href="register.html" class="cta-button">Be the First to Know</a>
+
+        <!-- QR Code -->
+        <div class="qr-code">
+            <img src="assets/bit.ly_tunify_lpm_club.png" alt="Scan this QR code" />
+        </div>
+
         <p class="footer">© 2025 Tunify LPM Club - All Rights Reserved</p>
     </div>
 
