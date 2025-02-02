@@ -5,181 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tunify LPM Club</title>
     <style>
-        /* Body Styles */
-        body {
+        /* Global Reset */
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0b0b0b, #2b2b2b);
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #141e30;
             color: #fff;
-            min-height: 100vh;
             display: flex;
-            flex-direction: column;
-        }
-
-        /* Header */
-        .header {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1.5rem;
-            backdrop-filter: blur(15px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('https://www.example.com/hero-image.jpg'); /* Replace with your own image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
 
+        /* Overlay for text clarity */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Main Container */
+        .coming-soon-container {
+            position: relative;
+            text-align: center;
+            max-width: 700px;
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            z-index: 1;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        /* Logo */
         .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 4.5rem;
+            font-weight: 800;
             background: linear-gradient(45deg, #ff6b6b, #ff4757);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-decoration: none;
+            letter-spacing: 2px;
+            animation: fadeIn 1s ease-out 0.2s forwards;
         }
 
+        /* Heading */
+        .heading {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            letter-spacing: 1px;
+            color: #ff4757;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.4s forwards;
+        }
+
+        /* Description */
+        .description {
+            font-size: 1.3rem;
+            color: #ddd;
+            line-height: 1.6;
+            margin-top: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.6s forwards;
+        }
+
+        /* Call to Action Button */
         .cta-button {
             background: #ff4757;
             color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: 500;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.8s forwards;
         }
 
         .cta-button:hover {
             background: #ff6b6b;
+            transform: scale(1.05);
         }
 
-        /* Video Grid Layout */
-        .video-grid {
-            max-width: 1300px;
-            margin: 3rem auto;
-            padding: 1rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .cta-button:active {
+            transform: scale(1);
         }
 
-        /* Video Card */
-        .video-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        /* Footer */
+        .footer {
+            font-size: 0.9rem;
+            color: #bbb;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
         }
 
-        .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
-        .video-iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .video-info {
-            padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 0 0 15px 15px;
-        }
-
-        .video-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #ff6b6b;
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        /* Add Content Section */
-        .add-content {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 3rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.2);
-        }
-
-        .add-content h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ff4757;
-            margin-bottom: 1rem;
-        }
-
-        .add-content p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #ddd;
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .video-grid {
-                grid-template-columns: 1fr;
+            .coming-soon-container {
+                padding: 3rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 3rem;
+            }
+
+            .heading {
+                font-size: 2rem;
             }
 
             .cta-button {
-                padding: 0.6rem 1.2rem;
+                padding: 0.8rem 2rem;
             }
-        }
-
-        /* Global Styling for Links */
-        a {
-            color: inherit;
-            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <a href="#" class="logo">Tunify Music Club</a>
-            <a href="register.html" class="cta-button">Share Your Taste</a>
-        </nav>
-    </header>
 
-    <main>
-        <div class="video-grid">
-            <!-- Manually Add Tunisian Music Video IDs -->
-            <div class="video-card">
-                <iframe class="video-iframe" 
-                        src="https://www.youtube.com/embed/PLFxECIB5e-OvoXTKUpQIWjfqOQobQuIgJ" 
-                        allowfullscreen>
-                </iframe>
-                <div class="video-info">
-                    <h3 class="video-title">TEST</h3>
-                </div>
-            </div>
+    <div class="overlay"></div>
+    <div class="coming-soon-container">
+        <h1 class="logo">Tunify</h1>
+        <h2 class="heading">Something Exciting Is Coming!</h2>
+        <p class="description">
+            We're preparing a special platform for you to discover the best of music.
+            Stay tuned for the launch!
+        </p>
+        <a href="register.html" class="cta-button">Be the First to Know</a>
+        <p class="footer">© 2025 Tunify LPM Club - All Rights Reserved</p>
+    </div>
 
-            <div class="video-card">
-                <iframe class="video-iframe" 
-                        src="https://www.youtube.com/embed/VIDEO_ID_2" 
-                        allowfullscreen>
-                </iframe>
-                <div class="video-info">
-                    <h3 class="video-title">Artist Name - Song Title</h3>
-                </div>
-            </div>
-        </div>
-
-        
-    </main>
 </body>
 </html>
