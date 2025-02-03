@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunify LPM Club - Notre Équipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0b0b0b, #2b2b2b);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .header {
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        /* New Team Layout */
+        .team-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        .team-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .team-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #ff4757;
+            margin: 1rem auto;
+        }
+
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .team-member {
+            width: 280px;
+            text-align: center;
+            position: relative;
+            padding: 1rem;
+        }
+
+        .member-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, #ff6b6b, #ff4757) border-box;
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) padding-box, 
+                linear-gradient(#fff 0 0);
+            transition: transform 0.3s ease;
+        }
+
+        .member-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 1rem;
+        }
+
+        .member-name {
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .member-role {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-member:hover .member-social {
+            opacity: 1;
+        }
+
+        .social-link {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #ff4757;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .team-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            
+            .team-member {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Tunify</a>
+            <a href="register.html" class="cta-button">Join Waitlist</a>
+        </nav>
+    </header>
+
+    <section class="team-section">
+        <h1 class="team-title">Notre Équipe</h1>
+        
+        <div class="team-list">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="assets/arij_bouchhioua.jpg" alt="Arij Bouchhioua" class="member-photo">
+                <div class="member-info">
+                    <h2 class="member-name">Arij Bouchhioua</h2>
+                    <p class="member-role">Cheffe événementielle</p>
+                    <div class="member-social">
+                        <a href="https://www.instagram.com/arij.bouchhioua/" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="assets/nour_menci.jpg" alt="Nour Mensi" class="member-photo">
+                <div class="member-info">
+                    <h2 class="member-name">Nour Mensi</h2>
+                    <p class="member-role">Cheffe Rédaction</p>
+                    <div class="member-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="assets/sejed.jpg" alt="Sejed Trabelsi" class="member-photo">
+                <div class="member-info">
+                    <h2 class="member-name">Sejed Trabelsi</h2>
+                    <p class="member-role">Chef Protocol</p>
+                    <div class="member-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

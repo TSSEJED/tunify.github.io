@@ -1,0 +1,188 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
+    <title>Tunify LPM Club</title>
+    <style>
+        /* === YOUR ORIGINAL CSS WITH IMPROVEMENTS === */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0b0b0b, #2b2b2b);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .cta-button {
+            background: #ff4757;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #ff6b6b;
+        }
+
+        /* === CRUCIAL ADDITION FOR VIDEO EMBEDS === */
+        .video-container {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+            background: #000;
+            border-radius: 15px 15px 0 0;
+            overflow: hidden;
+        }
+
+        .video-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-grid {
+            max-width: 1300px;
+            margin: 3rem auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 15px 15px;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.2rem;
+            }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Keep the body content from previous answer -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">Tunify Music Club</a>
+            <a href="register.html" class="cta-button">Share Your Taste</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="video-grid">
+            <!-- Working Video Example -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe class="video-iframe" 
+                            src="https://www.youtube.com/embed/lHQS2TWyFkg" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">✪ صامدون _ samidoun ✪</h3>
+                    <h2>اول أغنية يهديها جيشنا العظيم و الشرفاء من الحرس والامن والديوانة للشعب التونسي ليقول لهم اننا ساهرون على حمايتكم... تحية عظيمة لأسودنا البواسل.</h2>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe class="video-iframe" 
+                            src="https://www.youtube.com/embed/tS8nzAQg_8k" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Balti - Ya Hasra (Official Music Video)</h3>
+                    <h2>•Directed by: Kwifya
+                        •Produced by: Balti Productions, Chabaka
+                        •Lyrics: Balti, Ridha Chairi
+                        •Composition: Balti
+                        •Music Production: Jimmy Haddad
+                        •Recording: Balti Studio, Hbibzgang
+                        •Graphic: Osamadzn
+                        •VFX: Progetista</h2>
+                </div>
+            </div>
+
+            <!-- Add more videos using this structure -->
+        </div>
+    </main>
+</body>
+</html>
