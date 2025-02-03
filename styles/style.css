@@ -1,0 +1,189 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-image: linear-gradient(135deg, #801818, #1a0d0e);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Header & Navigation */
+header {
+    padding: 1.5rem 5%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    max-width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav a.active {
+    color: #ff4757;
+    font-weight: 600;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 3rem 5%;
+}
+
+.about-club {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-club h1 {
+    font-size: 2.5rem;
+    color: #292425;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-club h2 {
+    font-size: 1.8rem;
+    color: #ff4757;
+    margin: 2rem 0 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.about-club p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.about-club ul {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.about-club li {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.about-club li::before {
+    content: "•";
+    color: #ff4757;
+    position: absolute;
+    left: -1rem;
+}
+
+.about-club a {
+    color: #ff4757;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.about-club a:hover {
+    color: #801818;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .about-club {
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+    .about-club h1 {
+        font-size: 2rem;
+    }
+
+    .about-club h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-club {
+        padding: 1.5rem;
+    }
+
+    .about-club h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-club p {
+        font-size: 1rem;
+    }
+}
